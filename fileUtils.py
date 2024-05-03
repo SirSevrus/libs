@@ -1,6 +1,23 @@
 import os
 import sys
 
+def createFolder(folderName, path=''):
+    """
+    The function creates a folder at the given path, by default in the same directory otherwise the user can provide the path also.   
+    Rquires folder name.   
+    Basic Usage :
+    createFolder('welcome') # Creates welcome folder in the same directory
+    createFolder('welcome', 'dirs') # Creates welcome folder in the dirs directory
+    """
+    try:
+        if path.strip == '':
+            os.makedirs(folderName)
+        elif path.strip != '':
+            os.makedirs(os.path.join(path, folderName))
+    except Exception as e:
+        print('An error occured during creating folder named', str(folderName), ':', str(path))
+        sys.exit()
+
 def checkFolder(path):
     """
     The function checks the existence of a folder. The folder path will be given by the user as argument.   
