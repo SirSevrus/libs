@@ -27,16 +27,3 @@ data = {
     except Exception as e:
         print('An error occured during+n : {}'.format(str(e)))
         sys.exit()
-
-#data = {
-#'host': 'localhost',
-#'password': 'root',
-#'database': 'test'
-#}
-
-# Example Usage
-#conn, cursor = createConn(data)
-#cursor.execute("create table test(name varchar(10))")
-#conn.commit()
-#cursor.close()
-#conn.close()
