@@ -1,5 +1,6 @@
 import os
 import sys
+import pickle
 
 def createFolder(folderName, path=''):
     """
@@ -124,4 +125,32 @@ def readBinaryFile(path, bytes=-1, lines=False, byteLines=False):
         sys.exit()
     except Exception as e:
         print('An error occurred:', str(e))
+        sys.exit()
+
+def createEmptyFile(fileName, path='', binary=False):
+    """
+    Create an empty file with the given name and path.
+
+    Parameters:
+    fileName (str): The name of the file to be created.
+    path (str, optional): The path where the file will be created. Default is the current directory.
+    binary (bool, optional): If True, creates a binary file. Default is False, which creates a text file.
+
+    Returns:
+    bool: True if the file was successfully created, False otherwise.
+
+    Raises:
+    Exception: If an error occurs during file creation.
+    """
+    try:
+        if not binary:
+            with open(os.path.join(path, fileName), 'w') as file:
+                file.write('')
+            return True
+        else:
+            with open(os.path.join(path, fileName), 'wb') as file:
+                pickle.dump('', file)
+            return True
+    except Exception as e:
+        print('An error occurred creating file named ', str(os.path.join(path, fileName)), ':', str(e))
         sys.exit()
