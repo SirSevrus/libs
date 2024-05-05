@@ -8,3 +8,16 @@ To use any of the libraries in this repository, simply clone or download the rep
 
 ```bash
 git clone https://github.com/SirSevrus/libs.git
+```
+## importing the libraries
+
+To import any library just use:
+
+- To Import a single function from a library
+```python3
+import libs.{your_library_name}.{function_name}
+```
+- To Import full library just use:
+```python3
+import libs.{you_library_name}
+```
