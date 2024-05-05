@@ -86,3 +86,42 @@ def readTextFile(path, chars=-1, lines=False, charLines=False):
     except Exception as e:
         print('An error occurred:', str(e))
         sys.exit()
+
+def readBinaryFile(path, bytes=-1, lines=False, byteLines=False):
+    """
+    Read binary data from a file and return the content based on specified parameters.
+
+    Parameters:
+    path (str): The path to the binary file.
+    bytes (int, optional): Number of bytes to read from the file. Default is -1, meaning the whole file.
+    lines (bool, optional): If True, returns the lines of the file as a list. Default is False.
+    byteLines (int, optional): Number of lines to read as a list of bytes. Default is False.
+
+    Returns:
+    bytes or list: Depending on the parameters provided, returns either bytes (if bytes is specified) or a list of lines from the file in bytes format.
+
+    Raises:
+    FileNotFoundError: If the specified file path does not exist.
+    """
+
+    try:
+        if lines:
+            with open(path, 'rb') as file:
+                data = file.readlines()
+            if byteLines:
+                Data = []
+                for i in range(min(byteLines, len(data))):
+                    Data.append(data[i])
+                return Data
+            else:
+                return data
+        else:
+            with open(path, 'rb') as file:
+                data = file.read(bytes)
+                return data
+    except FileNotFoundError:
+        print('Error: File not found at path', path)
+        sys.exit()
+    except Exception as e:
+        print('An error occurred:', str(e))
+        sys.exit()
