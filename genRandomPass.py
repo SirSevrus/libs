@@ -81,10 +81,3 @@ def genMixed(length=16):
         item = random.choice(alphabets)
         password += item
     print(password)
-
-# Example Usage
-# genDigitsOnly(1000)
-# genLowerCaseOnly(100)
-# genUpperCaseOnly(100)
-# genMixedAlphabets(100)
-# genMixed()
