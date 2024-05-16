@@ -42,7 +42,7 @@ def init(filePath=None):
                     print(f'Installation Failed with status code : {str(x.returncode)}!')
                 else:
                     print(f'[+] Installed {str(req)}, time elapsed : {str(round(t2 - t1, 2))} seconds...')
-            print(f'\nInstalled requirements {str(len(reqs))} sucessfully!\Your program will execute in 5 seconds...')
+            print(f'\nInstalled requirements {str(len(reqs))} sucessfully!\nYour program will execute in 5 seconds...')
             time.sleep(5)
             subprocess.run('clear', shell=True)
         elif checkFile(filePath) == False:
