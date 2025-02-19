@@ -1,5 +1,5 @@
 .idea/
 .venv/
 test.py
-.txt
-.csv
+*.txt
+*.csv
