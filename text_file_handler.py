@@ -8,9 +8,9 @@ def get_file_object(filepath):
     :return (status, [fileobject or error])
     """
     try:
-        return (True, open(filepath, 'r'))
+        return True, open(filepath, 'r')
     except Exception as e:
-        return (False, e)
+        return False, e
 
 def read_chunk(fileobj, start, size, result, index):
     """
@@ -154,7 +154,6 @@ def find_word(fileobj, word):
             lines_found.append(line_number)
         line_number += 1
     return lines_found
-
 
 def get_file_info(filepath):
     """
