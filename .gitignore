@@ -1,5 +1,6 @@
 .idea/
 .venv/
+__pycache__/
 test.py
 *.txt
 *.csv
